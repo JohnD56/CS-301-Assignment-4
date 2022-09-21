@@ -5,12 +5,10 @@
 #include<fstream>
 #include<string>
 
+#include "editor.h"
+
 using namespace std;
 
-void viewgrade();
-void addgrade();
-void removegrade();
-void savegrade();
 int count,x,i=0,saved;
 float avg=0;
 char ch='a';
@@ -22,7 +20,7 @@ ofstream file2;
 
 int main()
 {
-    file.open("_blank_file_.txt");
+    file.open("_blank_file_.txt"); // "Grades.dat"
     count=0;// We can use this to find name, the assignment, or grade
     while(file>>word)//This will read the file and store values to the array
     {
@@ -37,50 +35,75 @@ int main()
         saved = i;
         count++;
     }
-    while(ch!='x')// This program will loop until it finds x
-    {
-        cout<<"Enter your command : ";
-        cin>>ch;
-        if(ch=='v'||ch=='a'||ch=='r'||ch=='s'||ch=='x')
-        {
-            if(ch=='v')
-            {
-                viewgrade();
+
+    editor editor(10); // Test implementation, edit later
+
+    bool loop = true;
+    char ch;
+
+    while (loop) {
+        cout << "\nEnter your command:";
+        cin >> ch;
+
+        switch (ch) {
+            case 'S': { // Set up for new semester
+                cout << "Set up for new semester" << endl;
+                editor.setup();
+                break;
             }
-            else if(ch=='a')
-            {
-                addgrade();
+
+            case 'A': { // Add a student
+                cout << "Add a student" << endl;
+                editor.addStudent();
+                break;
             }
-            else if(ch=='r')
-            {
-                removegrade();
+
+            case 'P': { // Record programming assignment grade for all students
+                cout << "Record programming assignment grade for all students" << endl;
+                editor.recordAssignmentGrade();
+                break;
             }
-            else if(ch=='s')
-            {
-                savegrade();
+
+            case 'T': { // Record test grade for all students
+                cout << "Record test grade for all students" << endl;
+                editor.recordTestGrade();
+                break;
             }
-        }
-        else
-        {
-            cout<<"Invalid Entry";
+
+            case 'F': { // Record final exam grade for all students
+                cout << "Record final exam grade for all students" << endl;
+                editor.recordExamGrade();
+                break;
+            }
+
+            case 'C': { // Change a grade for a particular student
+                cout << "Change a grade for a particular student" << endl;
+                editor.changeGrade();
+                break;
+            }
+
+            case 'G': { // Calculate final grade
+                cout << "Calculate final grade" << endl;
+                editor.finalGrade();
+                break;
+            }
+
+            case 'O': { // Output the grade data
+                cout << "Output the grade data" << endl;
+                editor.gradeData();
+                break;
+            }
+
+            case 'Q': { // Quit
+                cout << "Quit." << endl;
+                loop = false;
+                break;
+            }
+
+            default: {
+                cout << "Please enter valid command." << endl;
+                break;
+            }
         }
     }
 }
-void viewgrade()
-{
-
-}
-void addgrade()
-{
-
-}
-void removegrade()
-{
-
-}
-void savegrade()
-{
-
-}
-
-

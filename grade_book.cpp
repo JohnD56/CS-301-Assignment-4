@@ -62,38 +62,62 @@ int main()
             }
 
             case 'P': { // Record programming assignment grade for all students
-                cout << "\nRecord programming assignment grade for all students:" << endl;
-                editor.recordAssignmentGrade();
+                if(editor.isSetup()) {
+                    cout << "\nRecord programming assignment grade for all students:" << endl;
+                    editor.recordAssignmentGrade();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 
             case 'T': { // Record test grade for all students
-                cout << "\nRecord test grade for all students:" << endl;
-                editor.recordTestGrade();
+                if(editor.isSetup()) {
+                    cout << "\nRecord test grade for all students:" << endl;
+                    editor.recordTestGrade();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 
             case 'F': { // Record final exam grade for all students
-                cout << "\nRecord final exam grade for all students:" << endl;
-                editor.recordExamGrade();
+                if(editor.isSetup()) {
+                    cout << "\nRecord final exam grade for all students:" << endl;
+                    editor.recordExamGrade();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 
             case 'C': { // Change a grade for a particular student
-                cout << "\nChange a grade for a particular student:" << endl;
-                editor.changeGrade();
+                if(editor.isSetup()) {
+                    cout << "\nChange a grade for a particular student:" << endl;
+                    editor.changeGrade();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 
             case 'G': { // Calculate final grade
-                cout << "\nCalculate final grade:" << endl;
-                editor.finalGrade();
+                if(editor.isSetup()) {
+                    cout << "\nCalculate final grade:" << endl;
+                    editor.finalGrade();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 
             case 'O': { // Output the grade data
-                cout << "\nOutput the grade data:" << endl;
-                editor.gradeData();
+                if(editor.isSetup()) {
+                    cout << "\nOutput the grade data:" << endl;
+                    editor.gradeData();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 

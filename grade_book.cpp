@@ -11,7 +11,6 @@ using namespace std;
 
 int count,x,i=0,saved;
 float avg=0;
-char ch='a';
 
 string str,name[100],assign[100],word;
 float grade[100];
@@ -47,61 +46,65 @@ int main()
 
         switch (ch) {
             case 'S': { // Set up for new semester
-                cout << "Set up for new semester" << endl;
+                cout << "\nSet up for new semester:" << endl;
                 editor.setup();
                 break;
             }
 
             case 'A': { // Add a student
-                cout << "Add a student" << endl;
-                editor.addStudent();
+                if(editor.isSetup()) {
+                    cout << "\nAdd a student:" << endl;
+                    editor.addStudent();
+                } else {
+                    cout << "Please set up for new semester first." << endl;
+                }
                 break;
             }
 
             case 'P': { // Record programming assignment grade for all students
-                cout << "Record programming assignment grade for all students" << endl;
+                cout << "\nRecord programming assignment grade for all students:" << endl;
                 editor.recordAssignmentGrade();
                 break;
             }
 
             case 'T': { // Record test grade for all students
-                cout << "Record test grade for all students" << endl;
+                cout << "\nRecord test grade for all students:" << endl;
                 editor.recordTestGrade();
                 break;
             }
 
             case 'F': { // Record final exam grade for all students
-                cout << "Record final exam grade for all students" << endl;
+                cout << "\nRecord final exam grade for all students:" << endl;
                 editor.recordExamGrade();
                 break;
             }
 
             case 'C': { // Change a grade for a particular student
-                cout << "Change a grade for a particular student" << endl;
+                cout << "\nChange a grade for a particular student:" << endl;
                 editor.changeGrade();
                 break;
             }
 
             case 'G': { // Calculate final grade
-                cout << "Calculate final grade" << endl;
+                cout << "\nCalculate final grade:" << endl;
                 editor.finalGrade();
                 break;
             }
 
             case 'O': { // Output the grade data
-                cout << "Output the grade data" << endl;
+                cout << "\nOutput the grade data:" << endl;
                 editor.gradeData();
                 break;
             }
 
             case 'Q': { // Quit
-                cout << "Quit." << endl;
+                cout << "\nQuit." << endl;
                 loop = false;
                 break;
             }
 
             default: {
-                cout << "Please enter valid command." << endl;
+                cout << "\nPlease enter valid command." << endl;
                 break;
             }
         }

@@ -5,8 +5,20 @@
 #ifndef CS_301_ASSIGNMENT_4_EDITOR_H
 #define CS_301_ASSIGNMENT_4_EDITOR_H
 
+using namespace std;
+
 class editor {
 public:
+    int numAssignments;
+    int numTests;
+    int numExams;
+
+    string lastName;
+    string firstName;
+    int studentNum;
+
+    int progNum;
+
     editor();
     editor(int test);
 
@@ -18,7 +30,7 @@ public:
     void changeGrade();
     void finalGrade();
     void gradeData();
-    void quit();
+    bool isSetup();
 
 private:
 

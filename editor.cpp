@@ -120,8 +120,19 @@ void editor::recordAssignmentGrade() { // half finished
     }
 }
 
-void editor::recordTestGrade() {
-
+void editor::recordTestGrade() { //jd. not done
+ bool loop = true;
+    while(loop) {
+        cout << "Please enter a test number: ";
+        cin >> testNum;
+        
+        if (testNum => 0 && testNum < 4) {
+            loop = false;
+            
+        } else {
+            cout << "Please enter a valid test number: ";
+        }
+    }        
 }
 
 void editor::recordExamGrade() {

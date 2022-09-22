@@ -1,7 +1,7 @@
 # CS-301-Assignment-4
 
 # CS 301 Assignment 3
-Study Group 7 (Alex Milanez, John Edwin Karel Delgado, Ronell Sean Rulloda)
+Study Group 7 (Alex Milanez - cu8886, John Edwin Karel Delgado - nc7466, Ronell Sean Rulloda - ni2195)
 
 
 ## Project Plan

@@ -17,6 +17,7 @@ public:
     string firstName;
     int studentNum;
     int testNum;
+    int examNum
     int progNum;
 
     editor();

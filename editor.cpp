@@ -120,7 +120,7 @@ void editor::recordAssignmentGrade() { // half finished
     }
 }
 
-void editor::recordTestGrade() { //jd. not done
+void editor::recordTestGrade() { //jd.
  bool loop = true;
     while(loop) {
         cout << "Please enter a test number: ";
@@ -136,7 +136,18 @@ void editor::recordTestGrade() { //jd. not done
 }
 
 void editor::recordExamGrade() {
-
+ bool loop = true;
+    while(loop) {
+        cout << "Please enter a exam number: ";
+        cin >> examNum;
+        
+        if (testNum => 0 && testNum < 7) {
+            loop = false;
+            
+        } else {
+            cout << "Please enter a valid exam number: ";
+        }
+    } 
 }
 
 void editor::changeGrade() {
